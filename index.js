@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const Note = require('./models/note')
 const app = express()
@@ -131,7 +132,7 @@ app.post('/api/notes', (request, response) => {
 })
 app.use(unknownEndpoint)
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`running app on port ${PORT}`)
 })
